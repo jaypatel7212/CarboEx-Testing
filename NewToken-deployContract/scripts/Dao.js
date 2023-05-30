@@ -4,14 +4,14 @@ const { ethers } = require("hardhat");
 
 async function deploy() {
     const ContractName = await ethers.getContractFactory("Dao");
-    const contract = await ContractName.deploy("0x3e59B8f23426e28f48A790d733a6883091D89BCd","0x185CDd34d32e6EC7D8e69656eE0EE393681be50a");
+    const contract = await ContractName.deploy("0x02F950782401B1501f6C59F629d510D6d2C43f46","0xe1f13f4fe3329Be1e81075701e3aE494fCE2bDD5");
     console.log("Dao Contract deployed to address:", contract.address);
   }
   
 //  deploy();
 
 async function interact() {
-    const contractAddress = "0xc4c2ceA7faD6C8790a92df4684D1EBdfbf16b22B";
+    const contractAddress = "0x2fc5dA502D72E644BA41158f8bb9a035970Fa5De";
     const contract = await ethers.getContractAt("Dao", contractAddress);
     
     // createProposal 
@@ -19,7 +19,7 @@ async function interact() {
     //     "Offset ",
     //     " ",
     //     false,
-    //     500,{value:1000000000000000}
+    //     400,{value:"5000000000000000000000"}
     // );
 
     // // Get all proposals
@@ -30,28 +30,28 @@ async function interact() {
     //  const userProposals = await contract.getUserProposals("0xc1b385F5B31bd5acc60d3dBd04fF5A65cFd18bdd");
     //  console.log(userProposals);
 
-    //  const proposal = await contract.getProposal(3); 
+    //  const proposal = await contract.getProposal(1); 
     //  console.log(proposal);
 
     // Add a member to the DAO
-    // await contract.addmember(1,{value:10000000000000});
+    // await contract.addMember(1,{value:"1000000000000000000000"});
     //for up vote
-    await contract.upvote(4,{value:100000000000000});
+    // await contract.upVote(1,{value:"1000000000000000000000"});
     //for down vote
-    // await contract.downvote(1,{value:100000000000000});
+    // await contract.downVote(1,{value:"1000000000000000000000"});
 
     // Proposal result
-    // const proposalResult = await contract.getProposalResult(3);
+    // const proposalResult = await contract.getProposalResult(1);
     // console.log(proposalResult);
 
     // //setProposalstake
-    // await contract.setproposalstake("10000000000000000");  
+    // await contract.setProposalStake("100000000000000000000");  
     // //setVotingstake
-    // await contract.setvotingstake("100000000000000");
+    await contract.setVotingStake("100000000000000000000");
     // //setvotingtimeperiod
-    // await contract.setvotingtimeperiod(300);
+    // await contract.setVotingTimePeriod(300);
     // //setvotingpercent
-    // await contract.setvotingPercent(5);
+    // await contract.setVotingPercent(5);
     // //set globallimit
     // await contract.setLimit(2000);
 
@@ -62,7 +62,7 @@ async function interact() {
   // await contract.withdrawFromContract("120000000000000");
 
   // withdrawtoken from contract (Token address pass)
-  // await contract.withdrawTokenFromContract("0x185CDd34d32e6EC7D8e69656eE0EE393681be50a","100000000000000000000");
+  // await contract.withdrawTokenFromContract("0x197d8916358883c27faf296E75a89b0612Edd1CB","100000000000000000000");
 
   // withdrawStake from contract
   // await contract.withdrawStake();

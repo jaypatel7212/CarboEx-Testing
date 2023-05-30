@@ -12,18 +12,18 @@ async function deploy() {
   // deploy();
 
 async function interact() {
-  const contractAddress = "0x3e59B8f23426e28f48A790d733a6883091D89BCd"; 
+  const contractAddress = "0x72e6d982Fd46FfB0BB697D0C21A9d0cC9A6cB1b9"; 
   const contract = await ethers.getContractAt("Company", contractAddress);
   
   // Set user data
-  await contract.setUser(
-    "Jay",
-    "jay710",
-    "jay712@gmail.com",
-    " patel Brothers",
-    "India",
-    " "
-  );
+  // await contract.setUser(
+  //   "Jay",
+  //   "jay710",
+  //   "jay712@gmail.com",
+  //   " patel Brothers",
+  //   "India",
+  //   " "
+  // );
   
   // Get user data
   // const user = await contract.getUser("0xc1b385F5B31bd5acc60d3dBd04fF5A65cFd18bdd"); 
@@ -36,7 +36,10 @@ async function interact() {
   //  await contract.createOrder(2, "100000000000000000", "0xc1b385F5B31bd5acc60d3dBd04fF5A65cFd18bdd"); 
   
     // Buy credit from an order
-  // await contract.buycredit(1, { value: "200000000000000000"});
+  // await contract.buyCredit(1, { value: "200000000000000000"});
+
+  //set dao Address
+  await contract.setDaoAddress("0x2fc5dA502D72E644BA41158f8bb9a035970Fa5De");   // DaoAddress
   
   // Get user's orders
   // const userOrders = await contract.getUserOrders("0xc1b385F5B31bd5acc60d3dBd04fF5A65cFd18bdd"); 
@@ -44,7 +47,7 @@ async function interact() {
   //   let userOrdersarr=[];
   // for(let i=0;i<userOrders.length;i++)
   // {
-  //   const userOrdersDetails = await contract.Orderstruct(userOrders[i]);
+  //   const userOrdersDetails = await contract.orderStructMapping(userOrders[i]);
   //   userOrdersarr.push(userOrdersDetails);
   // }
   // console.log(userOrdersarr);

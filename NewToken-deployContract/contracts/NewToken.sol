@@ -6,17 +6,15 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 
 
 contract NewToken is ERC20,Ownable{
-    address admin;
-    uint256 tokenPrice = 1000000000000000000000; // 1 token = 1000 Ether
+    uint256 tokenPrice; // 1 token = 1000 Ether  wei =1000000000000000000000
 
-    constructor(uint _supply) ERC20("New Token","NT") {
-        admin=msg.sender;
+    constructor(uint _supply,uint _tokenPrice) ERC20("CarboEx","CX") {
+        tokenPrice = _tokenPrice;
         _mint(msg.sender,_supply);
     }
     
-    function mintFifty(uint _supply) public onlyOwner {
-        uint256 mintTokens = _supply;
-        _mint(msg.sender,mintTokens);
+    function mint(uint _supply) public onlyOwner {  
+        _mint(msg.sender, _supply);
     }
 
     function withdrawTokenFromContract(uint _amount,address _tokenAddress) public payable onlyOwner
@@ -27,15 +25,11 @@ contract NewToken is ERC20,Ownable{
     }
 
     // set token price for onlyOwner
-    function settokenprice(uint _tokenPrice) public onlyOwner {
+    function setTokenPrice(uint _tokenPrice) public onlyOwner {
         tokenPrice = _tokenPrice;
     }
     
-    function setadmin(address _admin) public onlyOwner {
-        admin = _admin;
-    }
-    
-    function gettokenPrice() public view returns(uint ){
+    function getTokenPrice() public view returns(uint ){
         return tokenPrice;
     } 
 
