@@ -33,15 +33,15 @@ module.exports = {
     hardhat: {  
       chainId: 1029
     },
-    BTTC: {
-      url:"https://pre-rpc.bt.io/",
-     // url: "https://rpc-mumbai.matic.today",
-      accounts:[process.env.PRIVATE_KEY],
-    },
-    // bttc: {
-    //   url: process.env.API_KEY_URL, //Your RPC URL
-    //   accounts: [process.env.PRIVATE_KEY], //Your private key
+    // BTTC: {
+    //   url:"https://pre-rpc.bt.io/",
+    //  // url: "https://rpc-mumbai.matic.today",
+    //   accounts:[process.env.PRIVATE_KEY],
     // },
+    bttc: {
+      url: process.env.API_KEY_URL, //Your RPC URL
+      accounts: [process.env.PRIVATE_KEY], //Your private key
+    },
     
   },
   etherscan: {

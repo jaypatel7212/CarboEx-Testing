@@ -13,7 +13,7 @@ async function deploy() {
 // Interact script
 
 async function interact() {
-    const contractAddress = "0x196A66417D83f7b489a2bAE862F4D8C6A8b52eaD";
+    // const contractAddress = "0x9955a6b3b0025bc9B00246B38C94CFb42999E6d1";
     const contract = await ethers.getContractAt("NewToken", contractAddress);
     
     // // Call contract functions here

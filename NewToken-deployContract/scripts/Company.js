@@ -9,10 +9,10 @@ async function deploy() {
     console.log("Company Contract deployed to address:", contract.address);
   }
   
-  deploy();
+  // deploy();
 
 async function interact() {
-  const contractAddress = "0xe85c386d7FC50Ee00dB5fc35fFd600c56b2C282B"; 
+  const contractAddress = "0x72e6d982Fd46FfB0BB697D0C21A9d0cC9A6cB1b9"; 
   const contract = await ethers.getContractAt("Company", contractAddress);
   
   // Set user data
@@ -39,7 +39,7 @@ async function interact() {
   // await contract.buyCredit(1, { value: "200000000000000000"});
 
   //set dao Address
-  // await contract.setDaoAddress("0x34235C77e05330Ae93dA4548CEb60Bdc08368e70");   // DaoAddress
+  await contract.setDaoAddress("0xB2e93e6fd9b87715CaeA467875D9Adca99DF7D1C");   // DaoAddress
   
   // Get user's orders
   // const userOrders = await contract.getUserOrders("0xc1b385F5B31bd5acc60d3dBd04fF5A65cFd18bdd"); 
@@ -56,9 +56,9 @@ async function interact() {
   // await contract.withdrawFromContract("10000000000000000000");
 }
 
-// interact()
-//   .then(() => process.exit(0))
-//   .catch((error) => {
-//     console.error(error);
-//     process.exit(1);
-// });
+interact()
+  .then(() => process.exit(0))
+  .catch((error) => {
+    console.error(error);
+    process.exit(1);
+});

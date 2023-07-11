@@ -4,14 +4,14 @@ const { ethers } = require("hardhat");
 
 async function deploy() {
     const ContractName = await ethers.getContractFactory("Dao");
-    const contract = await ContractName.deploy("0xe85c386d7FC50Ee00dB5fc35fFd600c56b2C282B","0x196A66417D83f7b489a2bAE862F4D8C6A8b52eaD");
+    const contract = await ContractName.deploy("0x72e6d982Fd46FfB0BB697D0C21A9d0cC9A6cB1b9","0x9955a6b3b0025bc9B00246B38C94CFb42999E6d1");
     console.log("Dao Contract deployed to address:", contract.address);
   }
   
  deploy();
 
 async function interact() {
-    const contractAddress = "0x34235C77e05330Ae93dA4548CEb60Bdc08368e70";
+    const contractAddress = "0xB2e93e6fd9b87715CaeA467875D9Adca99DF7D1C";
     const contract = await ethers.getContractAt("Dao", contractAddress);
     
     // createProposal 
@@ -19,7 +19,7 @@ async function interact() {
     //     "Offset ",
     //     " ",
     //     false,
-    //     200,{value:"5000000000000000000000"}
+    //     400,{value:"5000000000000000000000"}
     // );
 
     // // Get all proposals
@@ -36,12 +36,12 @@ async function interact() {
     // Add a member to the DAO
     // await contract.addMember(1,{value:"1000000000000000000000"});
     //for up vote
-    // await contract.upVote(3,{value:"1000000000000000000000"});
+    // await contract.upVote(4,{value:"1000000000000000000000"});
     //for down vote
     // await contract.downVote(1,{value:"1000000000000000000000"});
 
     // Proposal result
-    // const proposalResult = await contract.getProposalResult(3);
+    // const proposalResult = await contract.getProposalResult(4);
     // console.log(proposalResult);
 
     // //setProposalstake
@@ -62,10 +62,10 @@ async function interact() {
   // await contract.withdrawFromContract("120000000000000");
 
   // withdrawtoken from contract (Token address pass)
-  // await contract.withdrawTokenFromContract("0xBbd40ba6667ccC2a1488c60Ecd37f00d1E035A71","100000000000000000000");
+  // await contract.withdrawTokenFromContract("0x9955a6b3b0025bc9B00246B38C94CFb42999E6d1","80000000000000000000000");
 
   // withdrawStake from contract
-  await contract.withdrawStake();
+  // await contract.withdrawStake();
 }
 
 // interact()
